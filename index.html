@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yuhan | Sports Massage Therapist</title>
+    <link rel="icon" type="image/x-icon" href="/static/favicon.ico">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+    <script src="https://unpkg.com/feather-icons"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vanta@latest/dist/vanta.waves.min.js"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+        * {
+            font-family: 'Inter', sans-serif;
+        }
+        .hero-gradient {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        }
+        .service-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+        .vanta-bg {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <!-- Navigation -->
+    <nav class="bg-white shadow-md fixed w-full z-50">
+        <div class="container mx-auto px-6 py-4">
+            <div class="flex justify-between items-center">
+                <div class="flex items-center">
+                    <span class="text-xl font-bold text-indigo-700">YUHAN</span>
+                    <span class="ml-2 text-sm text-gray-600">Sports Massage Therapist</span>
+                </div>
+                <div class="hidden md:flex space-x-8">
+                    <a href="#home" class="text-gray-700 hover:text-indigo-600 transition-colors">Home</a>
+                    <a href="#services" class="text-gray-700 hover:text-indigo-600 transition-colors">Services</a>
+                    <a href="#about" class="text-gray-700 hover:text-indigo-600 transition-colors">About</a>
+                    <a href="#booking" class="text-gray-700 hover:text-indigo-600 transition-colors">Booking</a>
+                </div>
+                <div class="md:hidden">
+                    <button id="menu-toggle" class="text-gray-700">
+                        <i data-feather="menu"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="relative min-h-screen flex items-center justify-center overflow-hidden">
+        <div id="vanta-bg" class="vanta-bg"></div>
+        <div class="container mx-auto px-6 py-20 text-center z-10">
+            <div data-aos="fade-up" data-aos-duration="1000" class="bg-white/90 backdrop-blur-sm rounded-2xl p-8 shadow-xl max-w-3xl mx-auto">
+                <h1 class="text-4xl md:text-5xl font-bold text-gray-800 mb-4">Yuhan | Sports Massage Therapist</h1>
+                <p class="text-xl text-gray-600 mb-6">Sports and Remedial Massage Therapist specializing in shoulder, knee, hip, neck & back pain relief</p>
+                <div class="flex flex-wrap justify-center gap-4 mb-8">
+                    <span class="bg-indigo-100 text-indigo-800 px-4 py-2 rounded-full text-sm font-medium">🛠️ Holistic Approach</span>
+                    <span class="bg-indigo-100 text-indigo-800 px-4 py-2 rounded-full text-sm font-medium">⚡️ Long Term Focus</span>
+                    <span class="bg-indigo-100 text-indigo-800 px-4 py-2 rounded-full text-sm font-medium">📍 Cecil Hills</span>
+                </div>
+                <a href="#booking" class="bg-indigo-600 hover:bg-indigo-700 text-white font-semibold py-3 px-8 rounded-full transition-colors inline-flex items-center">
+                    Book Your Session
+                    <i data-feather="arrow-right" class="ml-2"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="py-20 bg-white">
+        <div class="container mx-auto px-6">
+            <div data-aos="fade-up" class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-4">Specialized Treatments</h2>
+                <p class="text-xl text-gray-600 max-w-2xl mx-auto">Comprehensive massage therapy solutions for athletes and active individuals</p>
+            </div>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div data-aos="fade-up" data-aos-delay="100" class="service-card bg-gray-50 rounded-2xl p-6 transition-all duration-300">
+                    <div class="w-16 h-16 bg-indigo-100 rounded-full flex items-center justify-center mb-4">
+                        <i data-feather="activity" class="text-indigo-600 w-8 h-8"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-800 mb-3">Shoulder Pain Relief</h3>
+                    <p class="text-gray-600">Targeted techniques to alleviate shoulder tension and improve mobility</p>
+                </div>
+
+                <div data-aos="fade-up" data-aos-delay="200" class="service-card bg-gray-50 rounded-2xl p-6 transition-all duration-300">
+                    <div class="w-16 h-16 bg-indigo-100 rounded-full flex items-center justify-center mb-4">
+                        <i data-feather="target" class="text-indigo-600 w-8 h-8"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-800 mb-3">Knee Rehabilitation</h3>
+                    <p class="text-gray-600">Specialized massage for knee injuries and post-surgery recovery</p>
+                </div>
+
+                <div data-aos="fade-up" data-aos-delay="300" class="service-card bg-gray-50 rounded-2xl p-6 transition-all duration-300">
+                    <div class="w-16 h-16 bg-indigo-100 rounded-full flex items-center justify-center mb-4">
+                        <i data-feather="trending-up" class="text-indigo-600 w-8 h-8"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-800 mb-3">Hip Mobility</h3>
+                    <p class="text-gray-600">Techniques to release hip tension and improve range of motion</p>
+                </div>
+
+                <div data-aos="fade-up" data-aos-delay="400" class="service-card bg-gray-50 rounded-2xl p-6 transition-all duration-300">
+                    <div class="w-16 h-16 bg-indigo-100 rounded-full flex items-center justify-center mb-4">
+                        <i data-feather="shield" class="text-indigo-600 w-8 h-8"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-800 mb-3">Neck & Back Pain</h3>
+                    <p class="text-gray-600">Comprehensive treatment for chronic neck and back discomfort</p>
+                </div>
+
+                <div data-aos="fade-up" data-aos-delay="500" class="service-card bg-gray-50 rounded-2xl p-6 transition-all duration-300">
+                    <div class="w-16 h-16 bg-indigo-100 rounded-full flex items-center justify-center mb-4">
+                        <i data-feather="heart" class="text-indigo-600 w-8 h-8"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-800 mb-3">Sports Recovery</h3>
+                    <p class="text-gray-600">Accelerated recovery protocols for athletes and active individuals</p>
+                </div>
+
+                <div data-aos="fade-up" data-aos-delay="600" class="service-card bg-gray-50 rounded-2xl p-6 transition-all duration-300">
+                    <div class="w-16 h-16 bg-indigo-100 rounded-full flex items-center justify-center mb-4">
+                        <i data-feather="award" class="text-indigo-600 w-8 h-8"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-800 mb-3">Remedial Massage</h3>
+                    <p class="text-gray-600">Therapeutic massage for injury prevention and performance enhancement</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-20 bg-gray-50">
+        <div class="container mx-auto px-6">
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <div data-aos="fade-right">
+                    <img src="http://static.photos/wellness/640x360/42" alt="Yuhan Sports Massage" class="rounded-2xl shadow-xl w-full">
+                </div>
+                <div data-aos="fade-left">
+                    <h2 class="text-3xl font-bold text-gray-800 mb-6">Holistic & Long-Term Focused Care</h2>
+                    <p class="text-lg text-gray-600 mb-6">
+                        With a passion for helping athletes and active individuals achieve optimal performance, 
+                        I provide comprehensive sports massage therapy that addresses both immediate concerns 
+                        and long-term wellness goals.
+                    </p>
+                    <div class="space-y-4">
+                        <div class="flex items-center">
+                            <div class="w-8 h-8 bg-indigo-100 rounded-full flex items-center justify-center mr-4">
+                                <i data-feather="check" class="text-indigo-600 w-4 h-4"></i>
+                            </div>
+                            <span class="text-gray-700">Certified Sports Massage Therapist</span>
+                        </div>
+                        <div class="flex items-center">
+                            <div class="w-8 h-8 bg-indigo-100 rounded-full flex items-center justify-center mr-4">
+                                <i data-feather="check" class="text-indigo-600 w-4 h-4"></i>
+                            </div>
+                            <span class="text-gray-700">Specialized in injury rehabilitation</span>
+                        </div>
+                        <div class="flex items-center">
+                            <div class="w-8 h-8 bg-indigo-100 rounded-full flex items-center justify-center mr-4">
+                                <i data-feather="check" class="text-indigo-600 w-4 h-4"></i>
+                            </div>
+                            <span class="text-gray-700">Holistic approach to pain management</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Booking Section -->
+    <section id="booking" class="py-20 bg-indigo-600">
+        <div class="container mx-auto px-6">
+            <div data-aos="fade-up" class="text-center text-white">
+                <h2 class="text-3xl md:text-4xl font-bold mb-6">Ready to Start Your Recovery Journey?</h2>
+                <p class="text-xl mb-8 max-w-2xl mx-auto">Book your session today and experience the difference professional sports massage therapy can make</p>
+                <a href="https://recoveryzn.simplybook.net/v2" target="_blank" class="bg-white text-indigo-600 hover:bg-gray-100 font-semibold py-4 px-12 rounded-full transition-colors inline-flex items-center text-lg">
+                    Book Online Now
+                    <i data-feather="calendar" class="ml-3"></i>
+                </a>
+                <div class="mt-8 text-indigo-100">
+                    <p>📍 Located in Cecil Hills</p>
+                    <p class="mt-2">Professional, comfortable treatment environment</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-12">
+        <div class="container mx-auto px-6">
+            <div class="grid md:grid-cols-3 gap-8">
+                <div>
+                    <h3 class="text-xl font-semibold mb-4">Yuhan Sports Massage</h3>
+                    <p class="text-gray-400">Professional sports and remedial massage therapy for optimal recovery and performance.</p>
+                </div>
+                <div>
+                    <h3 class="text-xl font-semibold mb-4">Contact</h3>
+                    <p class="text-gray-400">Cecil Hills, NSW</p>
+                    <p class="text-gray-400 mt-2">Book online at recoveryzn.simplybook.net</p>
+                </div>
+                <div>
+                    <h3 class="text-xl font-semibold mb-4">Follow</h3>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-gray-400 hover:text-white transition-colors">
+                            <i data-feather="instagram"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white transition-colors">
+                            <i data-feather="facebook"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white transition-colors">
+                            <i data-feather="linkedin"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="border-t border-gray-700 mt-8 pt-8 text-center text-gray-400">
+                <p>&copy; 2024 Yuhan Sports Massage Therapy. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Initialize AOS
+        AOS.init({
+            duration: 800,
+            once: true
+        });
+
+        // Initialize Feather Icons
+        feather.replace();
+
+        // Initialize Vanta.js waves background
+        VANTA.WAVES({
+            el: "#vanta-bg",
+            mouseControls: true,
+            touchControls: true,
+            gyroControls: false,
+            minHeight: 200.00,
+            minWidth: 200.00,
+            scale: 1.00,
+            scaleMobile: 1.00,
+            color: 0x667eea,
+            shininess: 35.00,
+            waveHeight: 15.00,
+            waveSpeed: 0.75,
+            zoom: 0.85
+        });
+
+        // Mobile menu toggle
+        document.getElementById('menu-toggle').addEventListener('click', function() {
+            const menu = document.querySelector('.hidden.md\\:flex');
+            menu.classList.toggle('hidden');
+            menu.classList.toggle('flex');
+            menu.classList.toggle('flex-col');
+            menu.classList.toggle('absolute');
+            menu.classList.toggle('top-full');
+            menu.classList.toggle('left-0');
+            menu.classList.toggle('w-full');
+            menu.classList.toggle('bg-white');
+            menu.classList.toggle('shadow-lg');
+            menu.classList.toggle('p-4');
+            menu.classList.toggle('space-y-4');
+        });
+    </script>
+</body>
+</html>
