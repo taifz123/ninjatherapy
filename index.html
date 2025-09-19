@@ -3,270 +3,644 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Yuhan | Sports Massage Therapist</title>
-    <link rel="icon" type="image/x-icon" href="/static/favicon.ico">
+    <title>Yuhan Sports Massage | Sports &amp; Remedial Massage in Cecil Hills</title>
+    <meta name="description" content="Sports and remedial massage therapy in Cecil Hills, NSW with Yuhan. Book individualized treatments for shoulder, knee, hip, neck and back pain relief.">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Yuhan Sports Massage | Cecil Hills, NSW">
+    <meta property="og:description" content="Professional sports and remedial massage therapy focused on recovery, performance and long-term wellbeing.">
+    <meta property="og:url" content="https://recoveryzn.simplybook.net/">
+    <meta property="og:image" content="https://images.unsplash.com/photo-1619983081593-ec0d0fe0a5ab?auto=format&amp;fit=crop&amp;w=1200&amp;q=80">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Yuhan Sports Massage | Cecil Hills, NSW">
+    <meta name="twitter:description" content="Professional sports and remedial massage therapy focused on recovery, performance and long-term wellbeing.">
+    <meta name="twitter:image" content="https://images.unsplash.com/photo-1619983081593-ec0d0fe0a5ab?auto=format&amp;fit=crop&amp;w=1200&amp;q=80">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&amp;display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&amp;display=swap" media="print" onload="this.media='all'">
+    <noscript>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&amp;display=swap">
+    </noscript>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'ui-sans-serif', 'system-ui', 'sans-serif']
+                    },
+                    colors: {
+                        primary: '#4f46e5'
+                    }
+                }
+            }
+        };
+    </script>
     <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
-    <script src="https://unpkg.com/feather-icons"></script>
-    <script src="https://cdn.jsdelivr.net/npm/vanta@latest/dist/vanta.waves.min.js"></script>
+    <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css">
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
-        * {
+        :root {
+            color-scheme: light;
+        }
+        html {
+            scroll-behavior: smooth;
+        }
+        body {
             font-family: 'Inter', sans-serif;
         }
-        .hero-gradient {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        .skip-link {
+            position: fixed;
+            top: 0.75rem;
+            left: 50%;
+            transform: translate(-50%, -200%);
+            background-color: #312e81;
+            color: white;
+            padding: 0.75rem 1.5rem;
+            border-radius: 9999px;
+            font-weight: 600;
+            z-index: 60;
+            box-shadow: 0 10px 30px rgba(79, 70, 229, 0.3);
+            transition: transform 0.2s ease;
         }
-        .service-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        .skip-link:focus {
+            transform: translate(-50%, 0);
+            outline: none;
         }
-        .vanta-bg {
-            position: absolute;
-            width: 100%;
-            height: 100%;
-            z-index: -1;
+        #menu-overlay {
+            transition: opacity 200ms ease;
+        }
+        #mobile-menu {
+            transition: opacity 200ms ease, transform 200ms ease;
+        }
+        #menu-overlay[data-state="closed"],
+        #mobile-menu[data-state="closed"] {
+            opacity: 0;
+            pointer-events: none;
+        }
+        #mobile-menu[data-state="closed"] {
+            transform: translateY(-12px);
+        }
+        #mobile-menu[data-state="open"] {
+            transform: translateY(0);
+        }
+        .floating-cta {
+            padding-bottom: calc(0.85rem + env(safe-area-inset-bottom, 0px));
+        }
+        @media (prefers-reduced-motion: reduce) {
+            html {
+                scroll-behavior: auto;
+            }
+            .skip-link,
+            #mobile-menu,
+            #menu-overlay {
+                transition: none;
+            }
         }
     </style>
+    <script src="https://unpkg.com/feather-icons@4.29.0/dist/feather.min.js" defer></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/vanta@latest/dist/vanta.waves.min.js" defer></script>
 </head>
-<body class="bg-gray-50">
-    <!-- Navigation -->
-    <nav class="bg-white shadow-md fixed w-full z-50">
-        <div class="container mx-auto px-6 py-4">
-            <div class="flex justify-between items-center">
-                <div class="flex items-center">
-                    <span class="text-xl font-bold text-indigo-700">YUHAN</span>
-                    <span class="ml-2 text-sm text-gray-600">Sports Massage Therapist</span>
-                </div>
-                <div class="hidden md:flex space-x-8">
-                    <a href="#home" class="text-gray-700 hover:text-indigo-600 transition-colors">Home</a>
-                    <a href="#services" class="text-gray-700 hover:text-indigo-600 transition-colors">Services</a>
-                    <a href="#about" class="text-gray-700 hover:text-indigo-600 transition-colors">About</a>
-                    <a href="#booking" class="text-gray-700 hover:text-indigo-600 transition-colors">Booking</a>
-                </div>
-                <div class="md:hidden">
-                    <button id="menu-toggle" class="text-gray-700">
-                        <i data-feather="menu"></i>
-                    </button>
-                </div>
-            </div>
-        </div>
-    </nav>
+<body class="bg-slate-50 text-slate-700">
+    <a href="#main-content" class="skip-link focus-visible:outline-none">Skip to main content</a>
 
-    <!-- Hero Section -->
-    <section id="home" class="relative min-h-screen flex items-center justify-center overflow-hidden">
-        <div id="vanta-bg" class="vanta-bg"></div>
-        <div class="container mx-auto px-6 py-20 text-center z-10">
-            <div data-aos="fade-up" data-aos-duration="1000" class="bg-white/90 backdrop-blur-sm rounded-2xl p-8 shadow-xl max-w-3xl mx-auto">
-                <h1 class="text-4xl md:text-5xl font-bold text-gray-800 mb-4">Yuhan | Sports Massage Therapist</h1>
-                <p class="text-xl text-gray-600 mb-6">Sports and Remedial Massage Therapist specializing in shoulder, knee, hip, neck & back pain relief</p>
-                <div class="flex flex-wrap justify-center gap-4 mb-8">
-                    <span class="bg-indigo-100 text-indigo-800 px-4 py-2 rounded-full text-sm font-medium">🛠️ Holistic Approach</span>
-                    <span class="bg-indigo-100 text-indigo-800 px-4 py-2 rounded-full text-sm font-medium">⚡️ Long Term Focus</span>
-                    <span class="bg-indigo-100 text-indigo-800 px-4 py-2 rounded-full text-sm font-medium">📍 Cecil Hills</span>
-                </div>
-                <a href="#booking" class="bg-indigo-600 hover:bg-indigo-700 text-white font-semibold py-3 px-8 rounded-full transition-colors inline-flex items-center">
-                    Book Your Session
-                    <i data-feather="arrow-right" class="ml-2"></i>
+    <!-- Header & Navigation -->
+    <header class="fixed inset-x-0 top-0 z-50 border-b border-slate-200/70 bg-white/80 backdrop-blur-lg">
+        <nav class="mx-auto flex max-w-6xl items-center justify-between px-4 py-4 sm:px-6 lg:px-8" aria-label="Primary">
+            <a href="#home" class="flex items-center gap-3" aria-label="Back to home">
+                <span class="inline-flex h-11 w-11 items-center justify-center rounded-full bg-indigo-100 text-indigo-700">
+                    <span class="text-lg font-semibold">Y</span>
+                </span>
+                <span class="flex flex-col text-left">
+                    <span class="text-lg font-semibold text-slate-900">Yuhan Sports Massage</span>
+                    <span class="text-sm text-slate-500">Sports &amp; Remedial Therapist</span>
+                </span>
+            </a>
+            <div class="hidden items-center space-x-8 text-sm font-medium md:flex">
+                <a href="#home" class="text-slate-600 transition hover:text-indigo-600 focus-visible:text-indigo-600 focus-visible:outline-none">Home</a>
+                <a href="#services" class="text-slate-600 transition hover:text-indigo-600 focus-visible:text-indigo-600 focus-visible:outline-none">Services</a>
+                <a href="#about" class="text-slate-600 transition hover:text-indigo-600 focus-visible:text-indigo-600 focus-visible:outline-none">About</a>
+                <a href="#booking" class="text-slate-600 transition hover:text-indigo-600 focus-visible:text-indigo-600 focus-visible:outline-none">Booking</a>
+            </div>
+            <div class="flex items-center space-x-3">
+                <a href="https://recoveryzn.simplybook.net/v2" target="_blank" rel="noopener noreferrer" aria-label="Open online booking in a new tab" class="inline-flex items-center gap-2 rounded-full bg-indigo-600 px-5 py-2.5 text-sm font-semibold text-white shadow-sm transition hover:-translate-y-0.5 hover:bg-indigo-700 hover:shadow-lg focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-indigo-500 focus-visible:ring-offset-2">
+                    <span>Book Now</span>
+                    <i data-feather="external-link" class="h-4 w-4" aria-hidden="true"></i>
                 </a>
+                <button id="menu-toggle" type="button" class="inline-flex h-11 w-11 items-center justify-center rounded-full border border-slate-200 text-slate-600 transition hover:border-indigo-200 hover:text-indigo-600 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-indigo-500 md:hidden" aria-expanded="false" aria-controls="mobile-menu" aria-label="Toggle navigation menu">
+                    <i data-feather="menu" class="h-5 w-5" aria-hidden="true"></i>
+                </button>
             </div>
+        </nav>
+    </header>
+
+    <!-- Mobile Navigation -->
+    <div id="menu-overlay" class="fixed inset-0 z-40 bg-slate-900/60 backdrop-blur-sm md:hidden" data-state="closed" hidden></div>
+    <div id="mobile-menu" class="fixed inset-x-4 top-24 z-50 md:hidden" data-state="closed" hidden>
+        <div class="overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-2xl">
+            <nav aria-label="Mobile primary" class="px-6 py-6">
+                <ul class="space-y-4 text-base font-medium">
+                    <li><a href="#home" class="block rounded-xl px-3 py-2 text-slate-700 transition hover:bg-indigo-50 hover:text-indigo-600 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-indigo-500">Home</a></li>
+                    <li><a href="#services" class="block rounded-xl px-3 py-2 text-slate-700 transition hover:bg-indigo-50 hover:text-indigo-600 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-indigo-500">Services</a></li>
+                    <li><a href="#about" class="block rounded-xl px-3 py-2 text-slate-700 transition hover:bg-indigo-50 hover:text-indigo-600 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-indigo-500">About</a></li>
+                    <li><a href="#booking" class="block rounded-xl px-3 py-2 text-slate-700 transition hover:bg-indigo-50 hover:text-indigo-600 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-indigo-500">Booking</a></li>
+                </ul>
+                <div class="mt-6">
+                    <a href="https://recoveryzn.simplybook.net/v2" target="_blank" rel="noopener noreferrer" aria-label="Open online booking in a new tab" class="flex items-center justify-center gap-2 rounded-full bg-indigo-600 px-5 py-3 text-base font-semibold text-white shadow-sm transition hover:bg-indigo-700 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-indigo-500 focus-visible:ring-offset-2">
+                        Book Online
+                        <i data-feather="calendar" class="h-4 w-4" aria-hidden="true"></i>
+                    </a>
+                </div>
+            </nav>
         </div>
-    </section>
+    </div>
 
-    <!-- Services Section -->
-    <section id="services" class="py-20 bg-white">
-        <div class="container mx-auto px-6">
-            <div data-aos="fade-up" class="text-center mb-16">
-                <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-4">Specialized Treatments</h2>
-                <p class="text-xl text-gray-600 max-w-2xl mx-auto">Comprehensive massage therapy solutions for athletes and active individuals</p>
-            </div>
-            
-            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <div data-aos="fade-up" data-aos-delay="100" class="service-card bg-gray-50 rounded-2xl p-6 transition-all duration-300">
-                    <div class="w-16 h-16 bg-indigo-100 rounded-full flex items-center justify-center mb-4">
-                        <i data-feather="activity" class="text-indigo-600 w-8 h-8"></i>
-                    </div>
-                    <h3 class="text-xl font-semibold text-gray-800 mb-3">Shoulder Pain Relief</h3>
-                    <p class="text-gray-600">Targeted techniques to alleviate shoulder tension and improve mobility</p>
-                </div>
-
-                <div data-aos="fade-up" data-aos-delay="200" class="service-card bg-gray-50 rounded-2xl p-6 transition-all duration-300">
-                    <div class="w-16 h-16 bg-indigo-100 rounded-full flex items-center justify-center mb-4">
-                        <i data-feather="target" class="text-indigo-600 w-8 h-8"></i>
-                    </div>
-                    <h3 class="text-xl font-semibold text-gray-800 mb-3">Knee Rehabilitation</h3>
-                    <p class="text-gray-600">Specialized massage for knee injuries and post-surgery recovery</p>
-                </div>
-
-                <div data-aos="fade-up" data-aos-delay="300" class="service-card bg-gray-50 rounded-2xl p-6 transition-all duration-300">
-                    <div class="w-16 h-16 bg-indigo-100 rounded-full flex items-center justify-center mb-4">
-                        <i data-feather="trending-up" class="text-indigo-600 w-8 h-8"></i>
-                    </div>
-                    <h3 class="text-xl font-semibold text-gray-800 mb-3">Hip Mobility</h3>
-                    <p class="text-gray-600">Techniques to release hip tension and improve range of motion</p>
-                </div>
-
-                <div data-aos="fade-up" data-aos-delay="400" class="service-card bg-gray-50 rounded-2xl p-6 transition-all duration-300">
-                    <div class="w-16 h-16 bg-indigo-100 rounded-full flex items-center justify-center mb-4">
-                        <i data-feather="shield" class="text-indigo-600 w-8 h-8"></i>
-                    </div>
-                    <h3 class="text-xl font-semibold text-gray-800 mb-3">Neck & Back Pain</h3>
-                    <p class="text-gray-600">Comprehensive treatment for chronic neck and back discomfort</p>
-                </div>
-
-                <div data-aos="fade-up" data-aos-delay="500" class="service-card bg-gray-50 rounded-2xl p-6 transition-all duration-300">
-                    <div class="w-16 h-16 bg-indigo-100 rounded-full flex items-center justify-center mb-4">
-                        <i data-feather="heart" class="text-indigo-600 w-8 h-8"></i>
-                    </div>
-                    <h3 class="text-xl font-semibold text-gray-800 mb-3">Sports Recovery</h3>
-                    <p class="text-gray-600">Accelerated recovery protocols for athletes and active individuals</p>
-                </div>
-
-                <div data-aos="fade-up" data-aos-delay="600" class="service-card bg-gray-50 rounded-2xl p-6 transition-all duration-300">
-                    <div class="w-16 h-16 bg-indigo-100 rounded-full flex items-center justify-center mb-4">
-                        <i data-feather="award" class="text-indigo-600 w-8 h-8"></i>
-                    </div>
-                    <h3 class="text-xl font-semibold text-gray-800 mb-3">Remedial Massage</h3>
-                    <p class="text-gray-600">Therapeutic massage for injury prevention and performance enhancement</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- About Section -->
-    <section id="about" class="py-20 bg-gray-50">
-        <div class="container mx-auto px-6">
-            <div class="grid md:grid-cols-2 gap-12 items-center">
-                <div data-aos="fade-right">
-                    <img src="http://static.photos/wellness/640x360/42" alt="Yuhan Sports Massage" class="rounded-2xl shadow-xl w-full">
-                </div>
-                <div data-aos="fade-left">
-                    <h2 class="text-3xl font-bold text-gray-800 mb-6">Holistic & Long-Term Focused Care</h2>
-                    <p class="text-lg text-gray-600 mb-6">
-                        With a passion for helping athletes and active individuals achieve optimal performance, 
-                        I provide comprehensive sports massage therapy that addresses both immediate concerns 
-                        and long-term wellness goals.
-                    </p>
-                    <div class="space-y-4">
-                        <div class="flex items-center">
-                            <div class="w-8 h-8 bg-indigo-100 rounded-full flex items-center justify-center mr-4">
-                                <i data-feather="check" class="text-indigo-600 w-4 h-4"></i>
-                            </div>
-                            <span class="text-gray-700">Certified Sports Massage Therapist</span>
+    <main id="main-content" class="pt-28 sm:pt-32">
+        <!-- Hero Section -->
+        <section id="home" class="relative isolate overflow-hidden">
+            <div id="vanta-bg" class="absolute inset-0 -z-10"></div>
+            <div class="relative mx-auto max-w-6xl px-4 pb-24 pt-24 sm:px-6 lg:px-8">
+                <div class="grid items-center gap-12 lg:grid-cols-[1.1fr_minmax(0,1fr)]">
+                    <div data-aos="fade-up" data-aos-delay="100">
+                        <span class="inline-flex items-center gap-2 rounded-full bg-white/80 px-4 py-2 text-sm font-medium text-indigo-700 shadow-sm ring-1 ring-indigo-100">
+                            <i data-feather="heart" class="h-4 w-4" aria-hidden="true"></i>
+                            Tailored care for active bodies
+                        </span>
+                        <h1 class="mt-6 text-4xl font-semibold tracking-tight text-slate-900 sm:text-5xl lg:text-6xl">Move freely with expert sports massage in Cecil Hills</h1>
+                        <p class="mt-6 text-lg leading-relaxed text-slate-600">Yuhan provides evidence-based sports and remedial massage that restores mobility, eases persistent pain and supports sustainable performance gains.</p>
+                        <div class="mt-8 flex flex-wrap gap-4">
+                            <a href="https://recoveryzn.simplybook.net/v2" target="_blank" rel="noopener noreferrer" aria-label="Open online booking in a new tab" class="inline-flex items-center gap-2 rounded-full bg-indigo-600 px-7 py-3.5 text-base font-semibold text-white shadow-lg transition hover:-translate-y-0.5 hover:bg-indigo-700 hover:shadow-xl focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-indigo-500 focus-visible:ring-offset-2">
+                                Book your session
+                                <i data-feather="arrow-right" class="h-4 w-4" aria-hidden="true"></i>
+                            </a>
+                            <a href="#services" class="inline-flex items-center gap-2 rounded-full border border-slate-300 px-6 py-3.5 text-base font-semibold text-slate-700 transition hover:-translate-y-0.5 hover:border-indigo-200 hover:text-indigo-700 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-indigo-500 focus-visible:ring-offset-2">
+                                Explore services
+                                <i data-feather="chevron-down" class="h-4 w-4" aria-hidden="true"></i>
+                            </a>
                         </div>
-                        <div class="flex items-center">
-                            <div class="w-8 h-8 bg-indigo-100 rounded-full flex items-center justify-center mr-4">
-                                <i data-feather="check" class="text-indigo-600 w-4 h-4"></i>
+                        <div class="mt-12 grid gap-6 text-sm font-medium text-slate-600 sm:grid-cols-3">
+                            <div class="rounded-2xl bg-white/80 p-4 shadow-sm ring-1 ring-slate-100">
+                                <p class="text-indigo-600">Shoulder, neck &amp; back care</p>
+                                <p class="mt-1 text-xs font-normal text-slate-500">Release tension, restore control.</p>
                             </div>
-                            <span class="text-gray-700">Specialized in injury rehabilitation</span>
+                            <div class="rounded-2xl bg-white/80 p-4 shadow-sm ring-1 ring-slate-100">
+                                <p class="text-indigo-600">Return to sport faster</p>
+                                <p class="mt-1 text-xs font-normal text-slate-500">Recovery protocols built around you.</p>
+                            </div>
+                            <div class="rounded-2xl bg-white/80 p-4 shadow-sm ring-1 ring-slate-100">
+                                <p class="text-indigo-600">Holistic planning</p>
+                                <p class="mt-1 text-xs font-normal text-slate-500">Support for long-term progress.</p>
+                            </div>
                         </div>
-                        <div class="flex items-center">
-                            <div class="w-8 h-8 bg-indigo-100 rounded-full flex items-center justify-center mr-4">
-                                <i data-feather="check" class="text-indigo-600 w-4 h-4"></i>
-                            </div>
-                            <span class="text-gray-700">Holistic approach to pain management</span>
+                    </div>
+                    <div data-aos="zoom-in" data-aos-delay="150" class="relative">
+                        <div class="relative mx-auto max-w-md overflow-hidden rounded-3xl shadow-2xl ring-1 ring-indigo-100">
+                            <img src="image1.png" alt="Massage therapist working on an athlete's shoulder" class="h-full w-full object-cover" fetchpriority="high">
                         </div>
                     </div>
                 </div>
+                <div class="mt-12 flex flex-wrap gap-3">
+                    <span class="rounded-full bg-white/90 px-4 py-2 text-sm font-medium text-indigo-700 shadow-sm ring-1 ring-indigo-100">🛠️ Holistic Approach</span>
+                    <span class="rounded-full bg-white/90 px-4 py-2 text-sm font-medium text-indigo-700 shadow-sm ring-1 ring-indigo-100">⚡️ Long-Term Focus</span>
+                    <span class="rounded-full bg-white/90 px-4 py-2 text-sm font-medium text-indigo-700 shadow-sm ring-1 ring-indigo-100">📍 Cecil Hills, NSW</span>
+                </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- Booking Section -->
-    <section id="booking" class="py-20 bg-indigo-600">
-        <div class="container mx-auto px-6">
-            <div data-aos="fade-up" class="text-center text-white">
-                <h2 class="text-3xl md:text-4xl font-bold mb-6">Ready to Start Your Recovery Journey?</h2>
-                <p class="text-xl mb-8 max-w-2xl mx-auto">Book your session today and experience the difference professional sports massage therapy can make</p>
-                <a href="https://recoveryzn.simplybook.net/v2" target="_blank" class="bg-white text-indigo-600 hover:bg-gray-100 font-semibold py-4 px-12 rounded-full transition-colors inline-flex items-center text-lg">
-                    Book Online Now
-                    <i data-feather="calendar" class="ml-3"></i>
+        <!-- Services Section -->
+        <section id="services" class="bg-white py-24">
+            <div class="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
+                <div class="mx-auto max-w-3xl text-center" data-aos="fade-up">
+                    <span class="text-sm font-semibold uppercase tracking-widest text-indigo-600">Services</span>
+                    <h2 class="mt-4 text-3xl font-semibold tracking-tight text-slate-900 sm:text-4xl">Specialised treatments for resilient movement</h2>
+                    <p class="mt-6 text-lg text-slate-600">Each session is individually planned to target your goals—from easing acute pain to refining performance mechanics.</p>
+                </div>
+                <div class="mt-16 grid gap-8 sm:grid-cols-2 xl:grid-cols-3">
+                    <article class="group rounded-2xl border border-slate-100 bg-slate-50/60 p-8 shadow-sm transition-all hover:-translate-y-1 hover:border-indigo-200 hover:bg-white hover:shadow-lg" data-aos="fade-up" data-aos-delay="100">
+                        <div class="mb-5 inline-flex items-center justify-center rounded-full bg-indigo-100 p-3">
+                            <i data-feather="activity" class="h-6 w-6 text-indigo-600" aria-hidden="true"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold text-slate-900">Shoulder Pain Relief</h3>
+                        <p class="mt-3 text-base text-slate-600">Restore joint function with targeted release work and movement coaching for lasting stability.</p>
+                    </article>
+                    <article class="group rounded-2xl border border-slate-100 bg-slate-50/60 p-8 shadow-sm transition-all hover:-translate-y-1 hover:border-indigo-200 hover:bg-white hover:shadow-lg" data-aos="fade-up" data-aos-delay="200">
+                        <div class="mb-5 inline-flex items-center justify-center rounded-full bg-indigo-100 p-3">
+                            <i data-feather="target" class="h-6 w-6 text-indigo-600" aria-hidden="true"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold text-slate-900">Knee Rehabilitation</h3>
+                        <p class="mt-3 text-base text-slate-600">Support post-injury or post-surgery recovery with progressive massage and mobility integration.</p>
+                    </article>
+                    <article class="group rounded-2xl border border-slate-100 bg-slate-50/60 p-8 shadow-sm transition-all hover:-translate-y-1 hover:border-indigo-200 hover:bg-white hover:shadow-lg" data-aos="fade-up" data-aos-delay="300">
+                        <div class="mb-5 inline-flex items-center justify-center rounded-full bg-indigo-100 p-3">
+                            <i data-feather="trending-up" class="h-6 w-6 text-indigo-600" aria-hidden="true"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold text-slate-900">Hip Mobility Care</h3>
+                        <p class="mt-3 text-base text-slate-600">Enhance hip range through release, activation and corrective strategies tailored to your sport.</p>
+                    </article>
+                    <article class="group rounded-2xl border border-slate-100 bg-slate-50/60 p-8 shadow-sm transition-all hover:-translate-y-1 hover:border-indigo-200 hover:bg-white hover:shadow-lg" data-aos="fade-up" data-aos-delay="400">
+                        <div class="mb-5 inline-flex items-center justify-center rounded-full bg-indigo-100 p-3">
+                            <i data-feather="shield" class="h-6 w-6 text-indigo-600" aria-hidden="true"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold text-slate-900">Neck &amp; Back Relief</h3>
+                        <p class="mt-3 text-base text-slate-600">Relieve chronic tension and improve posture with corrective massage and guided drills.</p>
+                    </article>
+                    <article class="group rounded-2xl border border-slate-100 bg-slate-50/60 p-8 shadow-sm transition-all hover:-translate-y-1 hover:border-indigo-200 hover:bg-white hover:shadow-lg" data-aos="fade-up" data-aos-delay="500">
+                        <div class="mb-5 inline-flex items-center justify-center rounded-full bg-indigo-100 p-3">
+                            <i data-feather="zap" class="h-6 w-6 text-indigo-600" aria-hidden="true"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold text-slate-900">Sports Recovery</h3>
+                        <p class="mt-3 text-base text-slate-600">Accelerate tissue repair and training readiness with protocols designed around your schedule.</p>
+                    </article>
+                    <article class="group rounded-2xl border border-slate-100 bg-slate-50/60 p-8 shadow-sm transition-all hover:-translate-y-1 hover:border-indigo-200 hover:bg-white hover:shadow-lg" data-aos="fade-up" data-aos-delay="600">
+                        <div class="mb-5 inline-flex items-center justify-center rounded-full bg-indigo-100 p-3">
+                            <i data-feather="award" class="h-6 w-6 text-indigo-600" aria-hidden="true"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold text-slate-900">Remedial Massage</h3>
+                        <p class="mt-3 text-base text-slate-600">Prevent injuries and build resilience with holistic remedial massage and tailored guidance.</p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- Testimonials Section -->
+        <section class="bg-slate-900 py-24 text-slate-100">
+            <div class="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
+                <div class="mx-auto max-w-3xl text-center" data-aos="fade-up">
+                    <span class="text-sm font-semibold uppercase tracking-widest text-indigo-300">Testimonials</span>
+                    <h2 class="mt-4 text-3xl font-semibold tracking-tight text-white sm:text-4xl">Trusted by athletes and active locals</h2>
+                    <p class="mt-6 text-lg text-slate-200/80">Clients appreciate the calm studio environment, progressive treatment planning and clear communication every step of the way.</p>
+                </div>
+                <div class="mt-16 grid gap-8 md:grid-cols-3">
+                    <figure class="flex h-full flex-col justify-between rounded-2xl bg-slate-800/70 p-8 shadow-lg ring-1 ring-white/10" data-aos="fade-up" data-aos-delay="100">
+                        <blockquote class="text-lg font-medium leading-relaxed text-slate-100">“After a shoulder injury I struggled to lift properly. Yuhan pinpointed the issue and gave me techniques to stay pain-free.”</blockquote>
+                        <figcaption class="mt-6 flex items-center gap-3 text-sm font-semibold text-indigo-200">
+                            <i data-feather="user" class="h-5 w-5" aria-hidden="true"></i>
+                            Jordan P.
+                        </figcaption>
+                    </figure>
+                    <figure class="flex h-full flex-col justify-between rounded-2xl bg-slate-800/70 p-8 shadow-lg ring-1 ring-white/10" data-aos="fade-up" data-aos-delay="200">
+                        <blockquote class="text-lg font-medium leading-relaxed text-slate-100">“The recovery plan kept me accountable through rehab. Each session built on the last and got me back on the field quickly.”</blockquote>
+                        <figcaption class="mt-6 flex items-center gap-3 text-sm font-semibold text-indigo-200">
+                            <i data-feather="user" class="h-5 w-5" aria-hidden="true"></i>
+                            Casey L.
+                        </figcaption>
+                    </figure>
+                    <figure class="flex h-full flex-col justify-between rounded-2xl bg-slate-800/70 p-8 shadow-lg ring-1 ring-white/10" data-aos="fade-up" data-aos-delay="300">
+                        <blockquote class="text-lg font-medium leading-relaxed text-slate-100">“Clear explanations, professional setup and noticeable relief from chronic back tension after every appointment.”</blockquote>
+                        <figcaption class="mt-6 flex items-center gap-3 text-sm font-semibold text-indigo-200">
+                            <i data-feather="user" class="h-5 w-5" aria-hidden="true"></i>
+                            Priya S.
+                        </figcaption>
+                    </figure>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section id="about" class="bg-slate-50 py-24">
+            <div class="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
+                <div class="grid gap-16 lg:grid-cols-[minmax(0,1fr)_0.9fr] lg:items-center">
+                    <div data-aos="fade-right">
+                        <span class="text-sm font-semibold uppercase tracking-widest text-indigo-600">About</span>
+                        <h2 class="mt-4 text-3xl font-semibold tracking-tight text-slate-900 sm:text-4xl">Holistic, long-term focused care with Yuhan</h2>
+                        <p class="mt-6 text-lg leading-relaxed text-slate-600">Combining years of sports massage experience with up-to-date education, Yuhan partners with you to rebuild confidence in your body. Each treatment blends manual therapy with active strategies so you can move better between sessions.</p>
+                        <div class="mt-8 space-y-4 text-base text-slate-600">
+                            <div class="flex items-start gap-3">
+                                <span class="inline-flex h-9 w-9 flex-shrink-0 items-center justify-center rounded-full bg-indigo-100">
+                                    <i data-feather="check" class="h-4 w-4 text-indigo-600" aria-hidden="true"></i>
+                                </span>
+                                <p class="leading-relaxed"><strong class="text-slate-900">Certified sports massage therapist</strong> with specialised knowledge of performance demands.</p>
+                            </div>
+                            <div class="flex items-start gap-3">
+                                <span class="inline-flex h-9 w-9 flex-shrink-0 items-center justify-center rounded-full bg-indigo-100">
+                                    <i data-feather="check" class="h-4 w-4 text-indigo-600" aria-hidden="true"></i>
+                                </span>
+                                <p class="leading-relaxed">Tailored rehabilitation guidance for knees, hips, shoulders and spinal health.</p>
+                            </div>
+                            <div class="flex items-start gap-3">
+                                <span class="inline-flex h-9 w-9 flex-shrink-0 items-center justify-center rounded-full bg-indigo-100">
+                                    <i data-feather="check" class="h-4 w-4 text-indigo-600" aria-hidden="true"></i>
+                                </span>
+                                <p class="leading-relaxed">Supportive environment that blends manual therapy, education and long-term planning.</p>
+                            </div>
+                        </div>
+                        <div class="mt-10 rounded-3xl border border-indigo-100 bg-white/80 p-8 shadow-sm" data-aos="fade-up" data-aos-delay="150">
+                            <h3 class="text-xl font-semibold text-slate-900">What to expect on your first visit</h3>
+                            <ul class="mt-4 space-y-3 text-base text-slate-600">
+                                <li class="flex items-start gap-2">
+                                    <i data-feather="corner-right-down" class="mt-1 h-4 w-4 text-indigo-500" aria-hidden="true"></i>
+                                    Comprehensive movement and lifestyle consultation to understand your goals.
+                                </li>
+                                <li class="flex items-start gap-2">
+                                    <i data-feather="corner-right-down" class="mt-1 h-4 w-4 text-indigo-500" aria-hidden="true"></i>
+                                    Tailored hands-on treatment paired with targeted activation or mobility drills.
+                                </li>
+                                <li class="flex items-start gap-2">
+                                    <i data-feather="corner-right-down" class="mt-1 h-4 w-4 text-indigo-500" aria-hidden="true"></i>
+                                    Practical take-home plan and follow-up recommendations to maintain progress.
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div data-aos="fade-left" class="relative">
+                        <div class="mx-auto max-w-xl overflow-hidden rounded-3xl shadow-2xl ring-1 ring-indigo-100">
+                            <img src="image2.png">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Booking Section -->
+        <section id="booking" class="relative overflow-hidden bg-indigo-600 py-24">
+            <div class="absolute inset-0 opacity-10" aria-hidden="true">
+                <div class="absolute inset-0 bg-gradient-to-br from-white via-transparent to-indigo-900"></div>
+            </div>
+            <div class="relative mx-auto max-w-4xl px-4 text-center sm:px-6 lg:px-8" data-aos="fade-up">
+                <span class="text-sm font-semibold uppercase tracking-widest text-indigo-100">Booking</span>
+                <h2 class="mt-4 text-3xl font-semibold tracking-tight text-white sm:text-4xl">Ready to start your recovery journey?</h2>
+                <p class="mt-6 text-lg text-indigo-100/90">Secure your appointment online and experience how focused sports massage can accelerate healing, ease pain and boost performance.</p>
+                <a href="https://recoveryzn.simplybook.net/v2" target="_blank" rel="noopener noreferrer" aria-label="Open online booking in a new tab" class="mt-10 inline-flex items-center gap-3 rounded-full bg-white px-8 py-4 text-lg font-semibold text-indigo-600 shadow-xl transition hover:-translate-y-0.5 hover:bg-indigo-50 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-indigo-600">
+                    Book online now
+                    <i data-feather="calendar" class="h-5 w-5" aria-hidden="true"></i>
                 </a>
-                <div class="mt-8 text-indigo-100">
-                    <p>📍 Located in Cecil Hills</p>
-                    <p class="mt-2">Professional, comfortable treatment environment</p>
+                <div class="mt-10 flex flex-col gap-2 text-sm font-medium text-indigo-100">
+                    <span>📍 Located in Cecil Hills, NSW</span>
+                    <span>By appointment only • Private studio setting</span>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
+    </main>
+
+    <!-- Floating Mobile CTA -->
+    <a href="https://recoveryzn.simplybook.net/v2" target="_blank" rel="noopener noreferrer" aria-label="Open online booking in a new tab" class="floating-cta fixed bottom-6 right-4 z-50 inline-flex items-center gap-2 rounded-full bg-indigo-600 px-5 py-3 text-sm font-semibold text-white shadow-2xl transition hover:bg-indigo-700 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-indigo-500 focus-visible:ring-offset-2 md:hidden">
+        Book Now
+        <i data-feather="arrow-up-right" class="h-4 w-4" aria-hidden="true"></i>
+    </a>
 
     <!-- Footer -->
-    <footer class="bg-gray-800 text-white py-12">
-        <div class="container mx-auto px-6">
-            <div class="grid md:grid-cols-3 gap-8">
-                <div>
-                    <h3 class="text-xl font-semibold mb-4">Yuhan Sports Massage</h3>
-                    <p class="text-gray-400">Professional sports and remedial massage therapy for optimal recovery and performance.</p>
+    <footer class="bg-slate-900 text-slate-200">
+        <div class="border-b border-slate-700/80 bg-slate-800/80">
+            <div class="mx-auto flex max-w-6xl flex-col gap-4 px-4 py-5 text-sm sm:flex-row sm:items-center sm:justify-between sm:px-6 lg:px-8">
+                <div class="flex items-center gap-2 text-slate-200">
+                    <i data-feather="map-pin" class="h-4 w-4 text-indigo-300" aria-hidden="true"></i>
+                    <span>Cecil Hills, NSW • By Appointment Only</span>
                 </div>
-                <div>
-                    <h3 class="text-xl font-semibold mb-4">Contact</h3>
-                    <p class="text-gray-400">Cecil Hills, NSW</p>
-                    <p class="text-gray-400 mt-2">Book online at recoveryzn.simplybook.net</p>
-                </div>
-                <div>
-                    <h3 class="text-xl font-semibold mb-4">Follow</h3>
-                    <div class="flex space-x-4">
-                        <a href="#" class="text-gray-400 hover:text-white transition-colors">
-                            <i data-feather="instagram"></i>
-                        </a>
-                        <a href="#" class="text-gray-400 hover:text-white transition-colors">
-                            <i data-feather="facebook"></i>
-                        </a>
-                        <a href="#" class="text-gray-400 hover:text-white transition-colors">
-                            <i data-feather="linkedin"></i>
-                        </a>
-                    </div>
+                <div class="flex flex-wrap items-center gap-4 text-sm font-semibold">
+                    <a href="tel:+61400000000" class="inline-flex items-center gap-1 text-indigo-200 transition hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-indigo-500 focus-visible:ring-offset-2 focus-visible:ring-offset-slate-900" aria-label="Call Yuhan Sports Massage">
+                        <i data-feather="phone" class="h-4 w-4" aria-hidden="true"></i>
+                        Call
+                    </a>
+                    <a href="https://www.google.com/maps/place/Cecil+Hills+NSW" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1 text-indigo-200 transition hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-indigo-500 focus-visible:ring-offset-2 focus-visible:ring-offset-slate-900" aria-label="Open directions to Cecil Hills, NSW in a new tab">
+                        <i data-feather="navigation" class="h-4 w-4" aria-hidden="true"></i>
+                        Directions
+                    </a>
                 </div>
             </div>
-            <div class="border-t border-gray-700 mt-8 pt-8 text-center text-gray-400">
-                <p>&copy; 2024 Yuhan Sports Massage Therapy. All rights reserved.</p>
+        </div>
+        <div class="mx-auto max-w-6xl px-4 py-16 sm:px-6 lg:px-8">
+            <div class="grid gap-12 lg:grid-cols-3">
+                <div>
+                    <h3 class="text-xl font-semibold text-white">Yuhan Sports Massage</h3>
+                    <p class="mt-4 text-sm leading-relaxed text-slate-300">Professional sports and remedial massage supporting shoulder, knee, hip, neck and back recovery for athletes and active people across Western Sydney.</p>
+                </div>
+                <div class="grid gap-4 text-sm text-slate-300 sm:grid-cols-2 lg:grid-cols-1">
+                    <div>
+                        <h4 class="text-sm font-semibold uppercase tracking-widest text-indigo-300">Quick links</h4>
+                        <ul class="mt-3 space-y-2">
+                            <li><a href="#services" class="transition hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-indigo-500 focus-visible:ring-offset-2 focus-visible:ring-offset-slate-900">Services</a></li>
+                            <li><a href="#about" class="transition hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-indigo-500 focus-visible:ring-offset-2 focus-visible:ring-offset-slate-900">About</a></li>
+                            <li><a href="#booking" class="transition hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-indigo-500 focus-visible:ring-offset-2 focus-visible:ring-offset-slate-900">Booking</a></li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h4 class="text-sm font-semibold uppercase tracking-widest text-indigo-300">Hours</h4>
+                        <p class="mt-3 leading-relaxed">Open by appointment only. Flexible session times available evenings and weekends.</p>
+                    </div>
+                </div>
+                <div>
+                    <h4 class="text-sm font-semibold uppercase tracking-widest text-indigo-300">Stay connected</h4>
+                    <p class="mt-3 text-sm leading-relaxed text-slate-300">Book online anytime or reach out for tailored guidance on preparing for your first visit.</p>
+                    <a href="https://recoveryzn.simplybook.net/v2" target="_blank" rel="noopener noreferrer" aria-label="Open online booking in a new tab" class="mt-6 inline-flex items-center gap-2 rounded-full border border-indigo-400/60 px-4 py-2 text-sm font-semibold text-indigo-200 transition hover:border-white hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-indigo-400 focus-visible:ring-offset-2 focus-visible:ring-offset-slate-900">
+                        Book a session
+                        <i data-feather="arrow-up-right" class="h-4 w-4" aria-hidden="true"></i>
+                    </a>
+                </div>
+            </div>
+            <div class="mt-12 border-t border-slate-800 pt-8 text-center text-xs text-slate-500">
+                <p>&copy; 2024 Yuhan Sports Massage. All rights reserved.</p>
             </div>
         </div>
     </footer>
 
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "MassageTherapist",
+        "name": "Yuhan Sports Massage",
+        "url": "https://recoveryzn.simplybook.net/",
+        "image": "https://images.unsplash.com/photo-1557821552-17105176677c?auto=format&amp;fit=crop&amp;w=900&amp;q=80",
+        "areaServed": {
+            "@type": "AdministrativeArea",
+            "name": "Cecil Hills, NSW"
+        },
+        "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "Cecil Hills",
+            "addressRegion": "NSW",
+            "addressCountry": "AU"
+        },
+        "telephone": "+61 400 000 000",
+        "priceRange": "$$",
+        "sameAs": []
+    }
+    </script>
+
     <script>
-        // Initialize AOS
-        AOS.init({
-            duration: 800,
-            once: true
-        });
+        document.addEventListener('DOMContentLoaded', function () {
+            const menuToggle = document.getElementById('menu-toggle');
+            const mobileMenu = document.getElementById('mobile-menu');
+            const menuOverlay = document.getElementById('menu-overlay');
+            let lastFocusedElement = null;
+            const focusableSelectors = 'a[href], button:not([disabled]), [tabindex]:not([tabindex="-1"])';
 
-        // Initialize Feather Icons
-        feather.replace();
+            function getFocusableElements() {
+                if (!mobileMenu) return [];
+                return Array.from(mobileMenu.querySelectorAll(focusableSelectors)).filter(function (el) {
+                    return !el.hasAttribute('disabled');
+                });
+            }
 
-        // Initialize Vanta.js waves background
-        VANTA.WAVES({
-            el: "#vanta-bg",
-            mouseControls: true,
-            touchControls: true,
-            gyroControls: false,
-            minHeight: 200.00,
-            minWidth: 200.00,
-            scale: 1.00,
-            scaleMobile: 1.00,
-            color: 0x667eea,
-            shininess: 35.00,
-            waveHeight: 15.00,
-            waveSpeed: 0.75,
-            zoom: 0.85
-        });
+            function trapFocus(event) {
+                if (event.key !== 'Tab') return;
+                const focusableElements = getFocusableElements();
+                if (focusableElements.length === 0) return;
+                const firstElement = focusableElements[0];
+                const lastElement = focusableElements[focusableElements.length - 1];
 
-        // Mobile menu toggle
-        document.getElementById('menu-toggle').addEventListener('click', function() {
-            const menu = document.querySelector('.hidden.md\\:flex');
-            menu.classList.toggle('hidden');
-            menu.classList.toggle('flex');
-            menu.classList.toggle('flex-col');
-            menu.classList.toggle('absolute');
-            menu.classList.toggle('top-full');
-            menu.classList.toggle('left-0');
-            menu.classList.toggle('w-full');
-            menu.classList.toggle('bg-white');
-            menu.classList.toggle('shadow-lg');
-            menu.classList.toggle('p-4');
-            menu.classList.toggle('space-y-4');
+                if (event.shiftKey) {
+                    if (document.activeElement === firstElement) {
+                        event.preventDefault();
+                        lastElement.focus();
+                    }
+                } else {
+                    if (document.activeElement === lastElement) {
+                        event.preventDefault();
+                        firstElement.focus();
+                    }
+                }
+            }
+
+            function openMenu() {
+                if (!mobileMenu || !menuOverlay) return;
+                lastFocusedElement = document.activeElement;
+                mobileMenu.hidden = false;
+                menuOverlay.hidden = false;
+                mobileMenu.dataset.state = 'open';
+                menuOverlay.dataset.state = 'open';
+                menuToggle?.setAttribute('aria-expanded', 'true');
+                document.body.classList.add('overflow-hidden');
+                mobileMenu.addEventListener('keydown', trapFocus);
+                const focusableElements = getFocusableElements();
+                const firstFocusable = focusableElements[0];
+                if (firstFocusable) {
+                    firstFocusable.focus();
+                }
+            }
+
+            function closeMenu(immediate = false) {
+                if (!mobileMenu || !menuOverlay) return;
+                if (mobileMenu.dataset.state === 'closed') return;
+                mobileMenu.dataset.state = 'closed';
+                menuOverlay.dataset.state = 'closed';
+                menuToggle?.setAttribute('aria-expanded', 'false');
+                document.body.classList.remove('overflow-hidden');
+                mobileMenu.removeEventListener('keydown', trapFocus);
+
+                const hide = function () {
+                    mobileMenu.hidden = true;
+                    menuOverlay.hidden = true;
+                };
+
+                if (immediate) {
+                    hide();
+                } else {
+                    setTimeout(hide, 200);
+                }
+
+                if (lastFocusedElement) {
+                    lastFocusedElement.focus();
+                    lastFocusedElement = null;
+                }
+            }
+
+            menuToggle?.addEventListener('click', function () {
+                if (!mobileMenu) return;
+                if (mobileMenu.dataset.state === 'open') {
+                    closeMenu();
+                } else {
+                    openMenu();
+                }
+            });
+
+            menuOverlay?.addEventListener('click', function () {
+                closeMenu();
+            });
+
+            if (mobileMenu) {
+                mobileMenu.querySelectorAll('a').forEach(function (link) {
+                    link.addEventListener('click', function () {
+                        closeMenu();
+                    });
+                });
+            }
+
+            document.addEventListener('keydown', function (event) {
+                if (event.key === 'Escape') {
+                    closeMenu();
+                }
+            });
+
+            window.addEventListener('resize', function () {
+                if (window.innerWidth >= 768) {
+                    closeMenu(true);
+                }
+            });
+
+            if (window.AOS) {
+                AOS.init({
+                    duration: 800,
+                    once: true,
+                    offset: 120,
+                    easing: 'ease-out-cubic'
+                });
+            }
+
+            if (window.feather) {
+                feather.replace({
+                    width: 20,
+                    height: 20,
+                    'stroke-width': 1.5
+                });
+            }
+
+            const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+            let vantaEffect = null;
+
+            function initVanta() {
+                if (reduceMotion.matches || typeof VANTA === 'undefined') {
+                    return;
+                }
+                if (vantaEffect) {
+                    return;
+                }
+                const element = document.getElementById('vanta-bg');
+                if (!element) return;
+                vantaEffect = VANTA.WAVES({
+                    el: element,
+                    mouseControls: true,
+                    touchControls: true,
+                    gyroControls: false,
+                    minHeight: 200.0,
+                    minWidth: 200.0,
+                    scale: 1.0,
+                    scaleMobile: 1.0,
+                    color: 0x4f46e5,
+                    shininess: 35.0,
+                    waveHeight: 15.0,
+                    waveSpeed: 0.75,
+                    zoom: 0.85
+                });
+            }
+
+            function destroyVanta() {
+                if (vantaEffect) {
+                    vantaEffect.destroy();
+                    vantaEffect = null;
+                }
+            }
+
+            if (typeof VANTA !== 'undefined') {
+                initVanta();
+            }
+
+            const handleMotionChange = function () {
+                if (reduceMotion.matches) {
+                    destroyVanta();
+                } else {
+                    initVanta();
+                }
+            };
+
+            if (reduceMotion.addEventListener) {
+                reduceMotion.addEventListener('change', handleMotionChange);
+            } else if (reduceMotion.addListener) {
+                reduceMotion.addListener(handleMotionChange);
+            }
+
+            window.addEventListener('beforeunload', destroyVanta);
         });
     </script>
 </body>
