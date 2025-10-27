@@ -1,0 +1,683 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Educational resources about sports massage, remedial massage, dry needling, and rehabilitation at Ninja Motion Therapies. Learn about treatments and benefits.">
+    <meta name="keywords" content="massage education, sports massage benefits, remedial massage information, dry needling explained, rehabilitation knowledge">
+    <title>Education Resources - Ninja Motion Therapies | Learn About Massage Therapy</title>
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    
+    <!-- Styles -->
+    <link rel="stylesheet" href="css/styles.css">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="images/logo.png">
+<script src="https://sites.super.myninja.ai/_assets/ninja-daytona-script.js"></script>
+    
+    <style>
+        .education-hero {
+            background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+            padding: 100px 0 60px;
+            text-align: center;
+            color: white;
+        }
+        
+        .education-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        .education-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin: 60px 0;
+        }
+        
+        .education-card {
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            overflow: hidden;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .education-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+        }
+        
+        .education-card-header {
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: white;
+            padding: 25px;
+            position: relative;
+            cursor: pointer;
+        }
+        
+        .education-card-header h3 {
+            margin: 0;
+            font-size: 1.4rem;
+            font-weight: 600;
+        }
+        
+        .education-card-header .icon {
+            position: absolute;
+            right: 25px;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 1.2rem;
+            transition: transform 0.3s ease;
+        }
+        
+        .education-card.active .education-card-header .icon {
+            transform: translateY(-50%) rotate(180deg);
+        }
+        
+        .education-card-content {
+            padding: 0;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease, padding 0.3s ease;
+        }
+        
+        .education-card.active .education-card-content {
+            max-height: 1000px;
+            padding: 25px;
+        }
+        
+        .education-content {
+            line-height: 1.6;
+        }
+        
+        .education-content h4 {
+            color: var(--primary-color);
+            margin: 20px 0 10px;
+            font-size: 1.1rem;
+        }
+        
+        .education-content ul {
+            margin: 10px 0;
+            padding-left: 20px;
+        }
+        
+        .education-content li {
+            margin: 8px 0;
+        }
+        
+        .education-content .highlight {
+            background: rgba(0,123,255,0.1);
+            border-left: 4px solid var(--primary-color);
+            padding: 15px;
+            margin: 20px 0;
+            border-radius: 5px;
+        }
+        
+        .education-content .benefit-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+            margin: 20px 0;
+        }
+        
+        .education-content .benefit-item {
+            background: #f8f9fa;
+            padding: 15px;
+            border-radius: 8px;
+            border-left: 3px solid var(--secondary-color);
+        }
+        
+        .cta-section {
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+            padding: 80px 0;
+            text-align: center;
+            margin-top: 80px;
+        }
+        
+        .faq-section {
+            background: white;
+            padding: 80px 0;
+        }
+        
+        .faq-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            margin-top: 40px;
+        }
+        
+        .faq-item {
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 10px;
+            border-left: 4px solid var(--primary-color);
+        }
+        
+        .faq-item h4 {
+            color: var(--primary-color);
+            margin: 0 0 10px 0;
+        }
+        
+        @media (max-width: 768px) {
+            .education-hero {
+                padding: 80px 0 40px;
+            }
+            
+            .education-grid {
+                grid-template-columns: 1fr;
+                gap: 20px;
+                margin: 40px 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <nav class="nav-container">
+            <a href="index.html" class="logo">
+                <img src="images/logo.png" alt="Ninja Motion Therapies Logo" style="height: 40px; margin-right: 0.5rem;">
+                Ninja Motion Therapies | Sports and Remedial Massage
+            </a>
+            
+            <ul class="nav-menu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="conditions.html">Conditions</a></li>
+                   <li><a href="education.html">Education</a></li>
+                <li><a href="education.html" class="active">Education</a></li>
+                <li><a href="faq.html">FAQ</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="clinkiko" class="btn btn-nav">Book Now</a></li>
+            </ul>
+            
+            <button class="menu-toggle" aria-label="Toggle menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </nav>
+    </header>
+
+    <!-- Education Hero Section -->
+    <section class="education-hero">
+        <div class="education-container">
+            <h1>Massage Therapy Education Hub</h1>
+            <p class="hero-description">Comprehensive information about massage treatments and their benefits</p>
+            <p>Empower yourself with knowledge about how massage therapy can help you recover, perform better, and live pain-free.</p>
+        </div>
+    </section>
+
+    <!-- Main Education Content -->
+    <section class="education-content-section">
+        <div class="education-container">
+            <div class="education-grid">
+                <!-- Sports Massage Card -->
+                <div class="education-card">
+                    <div class="education-card-header" onclick="toggleCard(this)">
+                        <h3>Sports Massage</h3>
+                        <span class="icon">▼</span>
+                    </div>
+                    <div class="education-card-content">
+                        <div class="education-content">
+                            <p>Sports massage is a specialized form of massage therapy designed to help athletes and active individuals prevent injuries, enhance performance, and recover faster from physical activity.</p>
+                            
+                            <h4>What is Sports Massage?</h4>
+                            <p>Sports massage combines various techniques including deep tissue massage, stretching, and joint mobilization to address the specific needs of athletes and physically active individuals. It focuses on areas of the body that are overused and stressed from repetitive and often aggressive movements.</p>
+                            
+                            <h4>Key Techniques Used:</h4>
+                            <ul>
+                                <li><strong>Deep Tissue Massage:</strong> Targets deep muscle layers and connective tissue</li>
+                                <li><strong>Effleurage:</strong> Long, gliding strokes to warm up muscles</li>
+                                <li><strong>Petrissage:</strong> Kneading and compression techniques</li>
+                                <li><strong>Friction:</strong> Deep, circular movements to break down adhesions</li>
+                                <li><strong>Tapotement:</strong> Rhythmic tapping to stimulate muscles</li>
+                                <li><strong>Stretching:</strong> Active and passive stretching techniques</li>
+                            </ul>
+                            
+                            <div class="benefit-list">
+                                <div class="benefit-item">
+                                    <strong>Performance Enhancement</strong>
+                                    <p>Improved flexibility, range of motion, and muscle efficiency</p>
+                                </div>
+                                <div class="benefit-item">
+                                    <strong>Injury Prevention</strong>
+                                    <p>Early detection and treatment of muscle imbalances</p>
+                                </div>
+                                <div class="benefit-item">
+                                    <strong>Faster Recovery</strong>
+                                    <p>Reduced muscle soreness and improved circulation</p>
+                                </div>
+                                <div class="benefit-item">
+                                    <strong>Stress Reduction</strong>
+                                    <p>Lower cortisol levels and improved relaxation</p>
+                                </div>
+                            </div>
+                            
+                            <div class="highlight">
+                                <strong>Did you know?</strong> Studies show that regular sports massage can improve athletic performance by up to 20% and reduce injury risk by 30% when combined with proper training.
+                            </div>
+                            
+                            <h4>When to Get Sports Massage:</h4>
+                            <ul>
+                                <li><strong>Pre-Event:</strong> 15-60 minutes before competition to prepare muscles</li>
+                                <li><strong>Post-Event:</strong> Within 2 hours after activity to aid recovery</li>
+                                <li><strong>Restorative:</strong> Between training sessions to maintain muscle health</li>
+                                <li><strong>Rehabilitative:</strong> During recovery from injury</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Remedial Massage Card -->
+                <div class="education-card">
+                    <div class="education-card-header" onclick="toggleCard(this)">
+                        <h3>Remedial Massage</h3>
+                        <span class="icon">▼</span>
+                    </div>
+                    <div class="education-card-content">
+                        <div class="education-content">
+                            <p>Remedial massage is a therapeutic treatment that assesses and treats the body's musculoskeletal system to address specific injuries, chronic pain, and functional problems.</p>
+                            
+                            <h4>What is Remedial Massage?</h4>
+                            <p>Remedial massage is a systematic assessment and treatment of the muscles, tendons, ligaments, and connective tissues of the body to assist in rehabilitation, pain management, and injury prevention. It involves a comprehensive evaluation of your condition and targeted treatment of the affected areas.</p>
+                            
+                            <h4>Conditions Treated:</h4>
+                            <ul>
+                                <li><strong>Chronic Pain:</strong> Back pain, neck pain, shoulder pain</li>
+                                <li><strong>Muscle Injuries:</strong> Strains, sprains, tears</li>
+                                <li><strong>Joint Problems:</strong> Arthritis, tendonitis, bursitis</li>
+                                <li><strong>Postural Issues:</strong> Forward head posture, scoliosis</li>
+                                <li><strong>Headaches & Migraines:</strong> Tension-type and cervicogenic</li>
+                                <li><strong>Nerve Compression:</strong> Sciatica, carpal tunnel</li>
+                            </ul>
+                            
+                            <div class="benefit-list">
+                                <div class="benefit-item">
+                                    <strong>Pain Relief</strong>
+                                    <p>Reduces chronic and acute pain naturally</p>
+                                </div>
+                                <div class="benefit-item">
+                                    <strong>Improved Mobility</strong>
+                                    <p>Restores range of motion and flexibility</p>
+                                </div>
+                                <div class="benefit-item">
+                                    <strong>Better Circulation</strong>
+                                    <p>Enhances blood flow and oxygen delivery</p>
+                                </div>
+                                <div class="benefit-item">
+                                    <strong>Stress Management</strong>
+                                    <p>Reduces muscle tension and anxiety</p>
+                                </div>
+                            </div>
+                            
+                            <h4>The Treatment Process:</h4>
+                            <ul>
+                                <li><strong>Assessment:</strong> Thorough evaluation of your condition and symptoms</li>
+                                <li><strong>Treatment Planning:</strong> Customized approach based on findings</li>
+                                <li><strong>Hands-On Treatment:</strong> Targeted techniques for your specific issues</li>
+                                <li><strong>Home Care Advice:</strong> Exercises and stretches for self-management</li>
+                                <li><strong>Progress Monitoring:</strong> Regular assessment of improvement</li>
+                            </ul>
+                            
+                            <div class="highlight">
+                                <strong>Research shows:</strong> Remedial massage can reduce pain levels by 40-60% and improve functional movement patterns in just 3-5 sessions when combined with appropriate home exercises.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Dry Needling Card -->
+                <div class="education-card">
+                    <div class="education-card-header" onclick="toggleCard(this)">
+                        <h3>Dry Needling</h3>
+                        <span class="icon">▼</span>
+                    </div>
+                    <div class="education-card-content">
+                        <div class="education-content">
+                            <p>Dry needling is a modern therapeutic technique that uses fine, sterile needles to treat muscle trigger points and relieve pain, promoting faster healing and improved muscle function.</p>
+                            
+                            <h4>What is Dry Needling?</h4>
+                            <p>Dry needling involves inserting thin, sterile needles into specific trigger points within muscle tissue. These trigger points are hyperirritable spots in skeletal muscle that are associated with palpable nodules in taut bands of muscle fibers. Despite using needles, it's not acupuncture - it's based on modern Western medical principles.</p>
+                            
+                            <h4>How It Works:</h4>
+                            <ul>
+                                <li><strong>Trigger Point Release:</strong> Deactivates painful muscle knots</li>
+                                <li><strong>Neuromodulation:</strong> Alters pain signals in the nervous system</li>
+                                <li><strong>Blood Flow Increase:</strong> Enhances circulation to the area</li>
+                                <li><strong>Inflammation Reduction:</strong> Decreases local inflammatory response</li>
+                                <li><strong>Muscle Relaxation:</strong> Reduces muscle tension and spasms</li>
+                            </ul>
+                            
+                            <h4>Common Uses:</h4>
+                            <ul>
+                                <li><strong>Myofascial Pain Syndrome:</strong> Chronic muscle pain conditions</li>
+                                <li><strong>Trigger Points:</strong> Active and latent muscle knots</li>
+                                <li><strong>Sports Injuries:</strong> Muscle strains and overuse injuries</li>
+                                <li><strong>Chronic Pain:</strong> Low back pain, neck pain, headaches</li>
+                                <li><strong>Repetitive Strain:</strong> Office-related injuries and conditions</li>
+                            </ul>
+                            
+                            <div class="highlight">
+                                <strong>What to expect:</strong> You may feel a small twitch when the needle enters the trigger point, followed by muscle relaxation. Some soreness is normal for 24-48 hours but typically resolves quickly.
+                            </div>
+                            
+                            <h4>Safety and Contraindications:</h4>
+                            <ul>
+                                <li><strong>Safe When:</strong> Performed by trained professionals</li>
+                                <li><strong>Single-Use:</strong> Sterile, disposable needles only</li>
+                                <li><strong>Avoid If:</strong> Pregnancy, bleeding disorders, needle phobia</li>
+                                <li><strong>Caution With:</strong> Certain medications, skin infections</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Joint Mobilisation Card -->
+                <div class="education-card">
+                    <div class="education-card-header" onclick="toggleCard(this)">
+                        <h3>Joint Mobilisation</h3>
+                        <span class="icon">▼</span>
+                    </div>
+                    <div class="education-card-content">
+                        <div class="education-content">
+                            <p>Joint mobilisation is a manual therapy technique that restores optimal joint function, reduces pain, and improves range of motion through controlled movement of joint surfaces.</p>
+                            
+                            <h4>What is Joint Mobilisation?</h4>
+                            <p>Joint mobilisation involves passive movement of specific joints using graded oscillatory or sustained techniques to restore normal joint mechanics. It targets the physiological movements of joints and can help address restrictions in joint capsules, ligaments, and surrounding soft tissues.</p>
+                            
+                            <h4>Types of Joint Mobilisation:</h4>
+                            <ul>
+                                <li><strong>Grade I:</strong> Small amplitude movements at beginning of range</li>
+                                <li><strong>Grade II:</strong> Large amplitude movements within mid-range</li>
+                                <li><strong>Grade III:</strong> Large amplitude movements to end of range</li>
+                                <li><strong>Grade IV:</strong> Small amplitude movements at end of range</li>
+                                <li><strong>Grade V:</strong> High-velocity thrust (manipulation)</li>
+                            </ul>
+                            
+                            <h4>Benefits Include:</h4>
+                            <ul>
+                                <li><strong>Reduced Joint Stiffness</strong></li>
+                                <li><strong>Improved Range of Motion</strong></li>
+                                <li><strong>Decreased Pain</strong></li>
+                                <li><strong>Enhanced Joint Nutrition</strong></li>
+                                <li><strong>Better Proprioception</strong></li>
+                                <li><strong>Improved Function</strong></li>
+                            </ul>
+                            
+                            <div class="benefit-list">
+                                <div class="benefit-item">
+                                    <strong>Spine Health</strong>
+                                    <p>Improves spinal mobility and reduces back pain</p>
+                                </div>
+                                <div class="benefit-item">
+                                    <strong>Shoulder Function</strong>
+                                    <p>Restores shoulder movement and reduces stiffness</p>
+                                </div>
+                                <div class="benefit-item">
+                                    <strong>Hip Mobility</strong>
+                                    <p>Enhances hip range and gait patterns</p>
+                                </div>
+                                <div class="benefit-item">
+                                    <strong>Joint Health</strong>
+                                    <p>Promotes long-term joint wellness</p>
+                                </div>
+                            </div>
+                            
+                            <h4>Commonly Treated Joints:</h4>
+                            <ul>
+                                <li><strong>Spinal Joints:</strong> Cervical, thoracic, lumbar vertebrae</li>
+                                <li><strong>Shoulder Complex:</strong> Glenohumeral, AC, SC joints</li>
+                                <li><strong>Lower Extremity:</strong> Hip, knee, ankle joints</li>
+                                <li><strong>Upper Extremity:</strong> Elbow, wrist, hand joints</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Rehabilitation Card -->
+                <div class="education-card">
+                    <div class="education-card-header" onclick="toggleCard(this)">
+                        <h3>Rehabilitation Programs</h3>
+                        <span class="icon">▼</span>
+                    </div>
+                    <div class="education-card-content">
+                        <div class="education-content">
+                            <p>Comprehensive rehabilitation programs combine massage therapy with targeted exercises and movement strategies to restore function, prevent re-injury, and optimize performance.</p>
+                            
+                            <h4>Rehabilitation Principles:</h4>
+                            <ul>
+                                <li><strong>Individualized Approach:</strong> Programs tailored to your specific needs</li>
+                                <li><strong>Progressive Loading:</strong> Gradual increase in intensity and challenge</li>
+                                <li><strong>Functional Movement:</strong> Focus on real-life activities and movements</li>
+                                <li><strong>Pain Management:</strong> Integrated strategies for pain control</li>
+                                <li><strong>Education:</strong> Understanding your condition and self-management</li>
+                            </ul>
+                            
+                            <h4>Rehabilitation Phases:</h4>
+                            <ul>
+                                <li><strong>Phase 1: Acute Phase</strong>
+                                    <ul>
+                                        <li>Pain control and inflammation reduction</li>
+                                        <li>Gentle range of motion exercises</li>
+                                        <li>Protective strategies</li>
+                                    </ul>
+                                </li>
+                                <li><strong>Phase 2: Subacute Phase</strong>
+                                    <ul>
+                                        <li>Strengthening begins</li>
+                                        <li>Improved range of motion</li>
+                                        <li>Balance and proprioception training</li>
+                                    </ul>
+                                </li>
+                                <li><strong>Phase 3: Remodeling Phase</strong>
+                                    <ul>
+                                        <li>Advanced strengthening</li>
+                                        <li>Sport-specific movements</li>
+                                        <li>Functional training</li>
+                                    </ul>
+                                </li>
+                                <li><strong>Phase 4: Return to Activity</strong>
+                                    <ul>
+                                        <li>Gradual return to normal activities</li>
+                                        <li>Maintenance strategies</li>
+                                        <li>Injury prevention education</li>
+                                    </ul>
+                                </li>
+                            </ul>
+                            
+                            <div class="highlight">
+                                <strong>Success factors:</strong> Consistent attendance, home exercise compliance, and good communication with your therapist are key to successful rehabilitation outcomes.
+                            </div>
+                            
+                            <h4>Common Conditions Rehabilitated:</h4>
+                            <ul>
+                                <li><strong>Sports Injuries:</strong> Sprains, strains, contusions</li>
+                                <li><strong>Overuse Injuries:</strong> Tendonitis, bursitis, stress fractures</li>
+                                <li><strong>Post-Surgical:</strong> Joint replacements, repairs</li>
+                                <li><strong>Chronic Conditions:</strong> Arthritis, degenerative changes</li>
+                                <li><strong>Work-Related:</strong> Repetitive strain injuries</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Injury Prevention Card -->
+                <div class="education-card">
+                    <div class="education-card-header" onclick="toggleCard(this)">
+                        <h3>Injury Prevention</h3>
+                        <span class="icon">▼</span>
+                    </div>
+                    <div class="education-card-content">
+                        <div class="education-content">
+                            <p>Prevention is better than cure. Learn how to identify risk factors, implement preventive strategies, and maintain optimal musculoskeletal health to avoid injuries.</p>
+                            
+                            <h4>Key Prevention Strategies:</h4>
+                            <ul>
+                                <li><strong>Regular Maintenance:</strong> Consistent massage therapy sessions</li>
+                                <li><strong>Proper Warm-up:</strong> Dynamic stretching before activity</li>
+                                <li><strong>Cool Down:</strong> Static stretching after exercise</li>
+                                <li><strong>Strength Training:</strong> Balanced muscle development</li>
+                                <li><strong>Flexibility Work:</strong> Regular stretching routine</li>
+                                <li><strong>Rest and Recovery:</strong> Adequate sleep and recovery time</li>
+                            </ul>
+                            
+                            <h4>Common Risk Factors:</h4>
+                            <ul>
+                                <li><strong>Muscle Imbalances:</strong> Weak or tight muscle groups</li>
+                                <li><strong>Poor Posture:</strong> Daily habits and workplace ergonomics</li>
+                                <li><strong>Overtraining:</strong> Too much volume or intensity</li>
+                                <li><strong>Improper Technique:</strong> Poor form during activities</li>
+                                <li><strong>Inadequate Recovery:</strong> Insufficient rest between sessions</li>
+                            </ul>
+                            
+                            <div class="benefit-list">
+                                <div class="benefit-item">
+                                    <strong>Self-Assessment</strong>
+                                    <p>Learn to identify early warning signs</p>
+                                </div>
+                                <div class="benefit-item">
+                                    <strong>Movement Quality</strong>
+                                    <p>Focus on proper technique and form</p>
+                                </div>
+                                <div class="benefit-item">
+                                    <strong>Recovery Strategies</strong>
+                                    <p>Implement effective recovery protocols</p>
+                                </div>
+                                <div class="benefit-item">
+                                    <strong>Regular Check-ups</strong>
+                                    <p>Preventive maintenance sessions</p>
+                                </div>
+                            </div>
+                            
+                            <div class="highlight">
+                                <strong>Prevention statistics:</strong> Athletes who receive regular preventive massage therapy experience 30% fewer injuries and recover 40% faster when injuries do occur.
+                            </div>
+                            
+                            <h4>Warning Signs to Watch For:</h4>
+                            <ul>
+                                <li>Persistent muscle soreness lasting more than 48 hours</li>
+                                <li>Decreased range of motion or flexibility</li>
+                                <li>Muscle weakness or fatigue</li>
+                                <li>Pain during normal activities</li>
+                                <li>Changes in movement patterns</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="faq-section">
+        <div class="container">
+            <h2>Frequently Asked Questions</h2>
+            <div class="faq-grid">
+                <div class="faq-item">
+                    <h4>How often should I get massage therapy?</h4>
+                    <p>Frequency depends on your goals and condition. For general wellness, monthly sessions work well. For injury recovery or chronic conditions, weekly or bi-weekly sessions may be recommended initially.</p>
+                </div>
+                <div class="faq-item">
+                    <h4>Is massage therapy painful?</h4>
+                    <p>Massage should not be excruciatingly painful. You may feel some discomfort during deep tissue work, especially on tight areas, but it should be manageable. Always communicate with your therapist about pressure levels.</p>
+                </div>
+                <div class="faq-item">
+                    <h4>What should I do after a massage?</h4>
+                    <p>Drink plenty of water, avoid strenuous activity for 24 hours, and pay attention to how your body feels. Some mild soreness is normal and should resolve within 24-48 hours.</p>
+                </div>
+                <div class="faq-item">
+                    <h4>Can massage therapy help with stress?</h4>
+                    <p>Absolutely. Massage therapy reduces cortisol levels, increases serotonin and dopamine, and activates the parasympathetic nervous system, promoting deep relaxation and stress reduction.</p>
+                </div>
+                <div class="faq-item">
+                    <h4>Is dry needling safe?</h4>
+                    <p>When performed by trained professionals using sterile, single-use needles, dry needling is very safe with minimal risks. Side effects are typically mild and temporary.</p>
+                </div>
+                <div class="faq-item">
+                    <h4>Should I get massage before or after exercise?</h4>
+                    <p>Both can be beneficial. Pre-event massage (15-60 minutes before) helps prepare muscles. Post-event massage (within 2 hours after) aids recovery. The techniques used differ based on timing.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="container">
+            <h2>Ready to Start Your Healing Journey?</h2>
+            <p>Book a consultation and experience the benefits of professional massage therapy</p>
+            <a href="clinkiko" class="btn btn-primary btn-large">Book Your Session</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h3>Ninja Motion Therapies</h3>
+                    <p>Professional sports and remedial massage therapy in Leichhardt NSW</p>
+                    <p>Expert rehabilitation and pain relief treatments at Olympian Frontiers Gym</p>
+                </div>
+                
+                <div class="footer-col">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="services.html">Services</a></li>
+                        <li><a href="education.html">Education</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-col">
+                    <h4>Contact Info</h4>
+                    <p><strong>Location:</strong><br>Olympian Frontiers Gym<br>Leichhardt NSW 2040</p>
+                    <p><strong>Email:</strong><br><a href="mailto:yuhanharrisrmt@gmail.com">yuhanharrisrmt@gmail.com</a></p>
+                </div>
+                
+                <div class="footer-col">
+                    <h4>Book Now</h4>
+                    <p>Ready to experience the benefits of professional massage therapy?</p>
+                    <a href="clinkiko" class="btn btn-secondary">Book Your Appointment</a>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2024 Ninja Motion Therapies. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        function toggleCard(header) {
+            const card = header.parentElement;
+            const allCards = document.querySelectorAll('.education-card');
+            
+            // Close all other cards
+            allCards.forEach(otherCard => {
+                if (otherCard !== card) {
+                    otherCard.classList.remove('active');
+                }
+            });
+            
+            // Toggle current card
+            card.classList.toggle('active');
+        }
+        
+        // Mobile menu toggle
+        document.querySelector('.menu-toggle').addEventListener('click', function() {
+            document.querySelector('.nav-menu').classList.toggle('active');
+        });
+    </script>
+</body>
+</html>
