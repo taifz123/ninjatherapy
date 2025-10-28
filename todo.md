@@ -20,6 +20,6 @@
 [x] Add educational content page to navigation menu
 
 ## Deployment
-[ ] Commit all changes to a new branch
-[ ] Push changes to GitHub repository
-[ ] Deploy website on GitHub Pages
+[x] Commit all changes to a new branch
+[x] Push changes to GitHub repository
+[x] Deploy website on GitHub Pages
