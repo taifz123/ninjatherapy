@@ -16,7 +16,7 @@
  <link rel="stylesheet" href="css/styles.css">
  
  <!-- Favicon -->
- <link rel="icon" type="image/png" href="images/logo.png">
+ <link rel="icon" type="image/png" href="images/logo-new.png">
 <script src="https://sites.super.myninja.ai/_assets/ninja-daytona-script.js"></script>
  
  <style>
@@ -182,7 +182,7 @@
  <header class="header">
  <nav class="nav-container">
  <a href="index.html" class="logo">
- <img src="images/logo.png" alt="Ninja Motion Therapies Logo" style="height: 40px; margin-right: 0.5rem;">
+ <img src="images/logo-new.png" alt="Ninja Motion Therapies Logo" style="height: 40px; margin-right: 0.5rem;">
  Ninja Motion Therapies | Sports and Remedial Massage
  </a>
  
@@ -658,26 +658,26 @@
  </div>
  </footer>
 
- <script>
- function toggleCard(header) {
- const card = header.parentElement;
- const allCards = document.querySelectorAll('.education-card');
- 
- // Close all other cards
- allCards.forEach(otherCard => {
- if (otherCard !== card) {
- otherCard.classList.remove('active');
- }
- });
- 
- // Toggle current card
- card.classList.toggle('active');
- }
- 
- // Mobile menu toggle
- document.querySelector('.menu-toggle').addEventListener('click', function() {
- document.querySelector('.nav-menu').classList.toggle('active');
- });
- </script>
-</body>
-</html>
+   
+    <!-- Main JavaScript -->
+    <script src="js/main.js"></script>
+    
+    <script>
+    // Education card toggle functionality
+    function toggleCard(header) {
+        const card = header.parentElement;
+        const allCards = document.querySelectorAll('.education-card');
+        
+        // Close all other cards
+        allCards.forEach(otherCard => {
+            if (otherCard !== card) {
+                otherCard.classList.remove('active');
+            }
+        });
+        
+        // Toggle current card
+        card.classList.toggle('active');
+    }
+    </script>
+   </body>
+   </html>
